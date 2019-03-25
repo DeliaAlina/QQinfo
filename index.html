@@ -2,28 +2,56 @@
 <html>
 
 <head>
-    <title>Catalog Online</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="forms.css">
 </head>
 
-<body bgcolor="pink">
+<body bgcolor="lightblue">
 
-    <h1><center>Catalogul meu</center></h1>
-    <HR width="30%"></hr>
-	<button onclick="runCode()">Apasa aici!</button>
-	<br><br>
-   <em><b>Bine ai venit!</b></em>
-   <h4>Aici poti vizualiza: </h4>
+    <h2><center>Catalogul meu</center></h2>
 
-   <ul>
+    <button type="button" onclick="a.afisareCursuri()"  onclick="m.afisareCursuri()">
+    Cursuri</button>
+    <p id="demo"></p>
+    <button class="open-button" onclick="openForm()">Adauga curs</button>
 
-	<li><a href="#">Note</a></li>
-	<li><a href="#">Cursuri</a></li>
-	<li><a href="#">Studenti</a></li>
+    <div class="form-popup" id="myForm">
+        <form action="#" onsubmit="closeForm()" class="form-container">
+            <h1>Adaugare Curs</h1>
+
+            <label for="curs"><b>Curs</b></label>
+            <input type="text" id="curs" placeholder="Introduceti Numele Cursului" name="curs">
+
+            <label for="semestru"><b>Semestrul</b></label>
+            <input type="number" id="semestru" placeholder="Introduceti semestrul" name="semestru" required>
+
+            <label for="an"><b>Anul</b></label>
+            <input type="number" id="an" placeholder="Introduceti anul" name="semestru" required>
+            <input type="submit" onclick="citireValori()">
+        </form>
+    </div>
+    <br></br>
 
 
-</ul>
-   
+    <br></br>
+    <div id="spoiler" role="aria-hidden">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Edit" /> <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+    <button type="button" onclick="cat.afisareCatalog()">
+            Catalog</button>
+    <p id="catalog"></p>
+
+    <script src="Curs.js"></script>
+    <script src="Studenti.js"></script>
+    <script src="Forms.js"></script>
+    <script src="Catalog.js"></script>
+    <script>
+        function CloseInput() {
+            document.getElementById('spoiler').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>

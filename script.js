@@ -1,0 +1,4 @@
+function runCode() {
+    alert("Salutare");
+}
+
